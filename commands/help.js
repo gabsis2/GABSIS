@@ -7,21 +7,19 @@ module.exports = {
 // inside a command, event listener, etc.
         const exampleEmbed = new Discord.MessageEmbed()
 	    .setColor('#RANDOM')
-	    .setTitle("Helper's GABSIS")
-	    .setAuthor('*Social Media Commands*', 'https://imgur.com/jTmrinT.gif', '')
+	    .setTitle("Helper's GABSIS BOT")
 	    .setDescription('**How can we help you?**')
 	    .addFields(
-			
-			{ name: 'YouTube', value: 'G6-YT', inline: false},
-			{ name: '-------------------------------------------------------', value: '|----------------***SOCIAL MEDIA :***----------------|', inline: false },
-		)
-		.addFields(
-			{ name: 'INSTAGRAM', value: 'G6-insta', inline: false },
-		)
+            {name: 'Commands', value: 'G6-cmds', inline: false },
+            {name: 'Social Media', value: 'G6-sm', inline: false},
+            {name: 'soon', value: 'soon', inline: false },
+            {name: 'soon', value: 'soon', inline: false},
+            {name: 'soon', value: 'soon', inline: false },
+            {name: 'soon', value: 'soon', inline: false},
+        )
 		.setURL('https://discord.com/channels/@595755770054705152')
-		.setThumbnail('https://imgur.com/jTmrinT.gif')
-		.addField('Discord', 'G6-discord', true)
-	    .setImage()
+		.setThumbnail()
+	    .setImage('https://imgur.com/rhlWI3h.gif')
 	    .setTimestamp()
 	    .setFooter("© GABSIS", "https://imgur.com/D06I1DN.gif");
 
