@@ -5,6 +5,8 @@ module.exports = {
         
     async execute(message, args){
 // inside a command, event listener, etc.
+		if (message.member.roles.cache.has('757543220979695687')){
+
         const exampleEmbed = new Discord.MessageEmbed()
 	    .setColor('#RANDOM')
 	    .setTitle("GABSIS SOCIAL MEDIA")
@@ -16,7 +18,7 @@ module.exports = {
 		.addField(`INSTAGRAM`, `[gabsis._](https://www.instagram.com/gabsis._)` , true)
 		.addFields(
 			{ name: '--------------------------------------------------------', value: '*', inline: false},
-		
+		 
 		)
 		.addField('YouTube', `[My YouTube Channel](https://www.youtube.com/c/GABSIS06)`, true)
 		.setURL('https://discord.gg/ZWPmgmnNz6')
@@ -25,6 +27,6 @@ module.exports = {
 	    .setTimestamp()
 	    .setFooter("© GABSIS", "https://imgur.com/D06I1DN.gif");
 
-    messageEmbed = await message.channel.send(exampleEmbed)
+    	messageEmbed = await message.channel.send(exampleEmbed)}
     }
 }

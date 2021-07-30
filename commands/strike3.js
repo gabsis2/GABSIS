@@ -1,28 +1,57 @@
+const Discord = require('discord.js')
 module.exports = {
     name: 'strike3',
-    description: "Warn a member",
-    execute(message, args) {
+    description: "Mute Auto Command",
+    async execute(message, args) {
         const target = message.mentions.users.first();
-        if(message.member.roles.cache.has('698146011486617622') || message.member.roles.cache.has('717422669317931110')){
+        if(message.member.hasPermission('BAN_MEMBERS') || message.member.hasPermission('ADMINISTRATOR') || message.member.hasPermission('MANAGE_CHANNELS') || message.member.hasPermission('MANAGE_MESSAGES') ){
             if (target) {
  
-                let mainRole = message.guild.roles.cache.find(role => role.name === 'Strike II');
-                let muteRole = message.guild.roles.cache.find(role => role.name === 'mute');
-
-                 
+                // let mainRole = message.guild.roles.cache.find(role => role.name === 'Friend');
+                let strikeRole = message.guild.roles.cache.find(role => role.name === 'Strike2');
+                let strikeRole2 = message.guild.roles.cache.find(role => role.name === 'muted');
+ 
                 let memberTarget = message.guild.members.cache.get(target.id);
+
+                if(!strikeRole2) {
+                    try {
+                        (await message.channel.send('**Muted role** Mafamesh f server ⛔ !, Stanna Shwy **Bsh Naaml** Role Jdyda F Server *🙄 !*...').then(message => message.delete({timeout: 10000})))
+        
+                        strikeRole = await message.guild.roles.create({
+                            data : {
+                                name : 'muted',
+                                permissions: []
+                            }
+                        });
+                        
+                        message.channel.send('**Muted role** Has Successfully Been Created. ✅ !').then(message => message.delete({timeout: 5000}));
+                        
+                    } catch (error) {
+                        console.log(error)
+                    }
+                }
+
+
+
  
                 if (!args[1]) {
-                    memberTarget.roles.remove(mainRole.id);
-                    memberTarget.roles.add(muteRole.id);
-                    message.channel.send(`<@${memberTarget.user.id}> ***3 Strikes*** (**Maaneha Mute 1 Day !**)`);
+                    
+                    memberTarget.roles.remove(strikeRole);
+                    memberTarget.roles.add(strikeRole2);
+                    message.channel.send(`<@${memberTarget.user.id}> **You Have 3 Strikes** ⚠️ \`{Maaneha => 1 Day Mute}\` !`);
                     return
                 }
+                
+                memberTarget.roles.add(strikeRole2);
+                
+ 
+                
             } else {
-                message.channel.send('Cant find that member!');
+                message.channel.send('I Can/t find that member!');
             }
         }else{
-            message.channel.send(`\`\`\` \n Maeendakesh Permession Bsh Temuti Shkun ! \n \`\`\``);
+            message.delete();
+            message.channel.send(`${message.author}\`\`\` \n Maeendakesh Permession Bsh Twarni Shkun ! \n \`\`\``).then(message => message.delete({timeout: 4000}));
         }
     }
 }

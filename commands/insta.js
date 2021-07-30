@@ -5,6 +5,8 @@ module.exports = {
     description: 'insta Command !',
         
     execute(message, args){
+        if (message.member.roles.cache.has('757543220979695687')){
+
         let user = message.author 
 
         const embed = new Discord.MessageEmbed()
@@ -16,6 +18,6 @@ module.exports = {
         .setURL("https://www.instagram.com/gabsis._/")
         .setFooter("© GABSIS", "https://imgur.com/D06I1DN.gif")
         return message.channel.send(embed)
+        }
     }
-
 }

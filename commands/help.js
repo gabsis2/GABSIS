@@ -1,28 +1,25 @@
 const Discord = require('discord.js');
+
 module.exports = {
     name: 'help',
     description: 'Help Command !',
-        
-    async execute(message, args){
-// inside a command, event listener, etc.
-        const exampleEmbed = new Discord.MessageEmbed()
-	    .setColor('#RANDOM')
-	    .setTitle("Helper's GABSIS BOT")
-	    .setDescription('**How can we help you?**')
-	    .addFields(
-            {name: 'Commands', value: 'G6-cmds', inline: false },
-            {name: 'Social Media', value: 'G6-sm', inline: false},
-            {name: 'soon', value: 'soon', inline: false },
-            {name: 'soon', value: 'soon', inline: false},
-            {name: 'soon', value: 'soon', inline: false },
-            {name: 'soon', value: 'soon', inline: false},
-        )
-		.setURL('https://discord.com/channels/@595755770054705152')
-		.setThumbnail()
-	    .setImage('https://imgur.com/rhlWI3h.gif')
-	    .setTimestamp()
-	    .setFooter("© GABSIS", "https://imgur.com/D06I1DN.gif");
+    execute(message, args){
+        const embed = new Discord.MessageEmbed()
+        .setTitle(`Helper's GABSIS BOT !`)
+        .setDescription('**How Can I Help You Guy ?**')
+        .setAuthor('*Welcome ♥*','https://imgur.com/D06I1DN.gif','')
+        .setThumbnail('https://imgur.com/D06I1DN.gif')
+        .setURL('https://www.google.com/')
+        .addFields(
+            {name: 'Commands', value: `\`G6-cmds\``, inline: true},
+            {name: `Bot's Owner`, value: `\`G6-owner\``, inline: true},
+            
+            {name: 'Moderator Commands', value: `\`G6-modcmds\``, inline: true}
 
-    messageEmbed = await message.channel.send(exampleEmbed)
+        )
+        .setFooter("© ! G A B S I S#1978", "https://imgur.com/D06I1DN.gif")
+        .setTimestamp()
+
+        message.channel.send(embed)
     }
 }

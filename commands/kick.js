@@ -3,16 +3,17 @@ module.exports = {
     Description: "Kick a member!",
     execute(message, args){
         const member = message.mentions.users.first();
-        if(message.member.roles.cache.has('698146011486617622') || message.member.roles.cache.has('717422669317931110')){
+        if(message.member.hasPermission('KICK_MEMBERS') || message.member.hasPermission('ADMINISTRATOR')){
             if(member){
                 const memberTarger = message.guild.members.cache.get(member.id);
                 memberTarger.kick();
                 message.channel.send(`<@${member.id}>!User has been kicked !`);
             }else {
-                message.channel.send('**Lazmak Tagih Bsh** ***Yetkicka ! ***');
+                message.channel.send('**Lazmak Tagih Bsh** ***Yetkicka ! ***').then(message.delete({timeout: 5000}));
             }
         }else {
-            message.channel.send(`\`\`\` \n Maeendakesh Permession Bsh Tkicki ! \n \`\`\``);
+            message.delete();
+            message.channel.send(`${message.author}\`\`\` \n Maeendakesh Permession Bsh Tkicki Shkun ! \n \`\`\``).then(message => message.delete({timeout: 4000}));
 
         }
     }

@@ -8,7 +8,7 @@ const Discord = require('discord.js');
         
     
         async execute(message, args, client) {
-            if(message.member.roles.cache.has('698146011486617622') || message.member.roles.cache.has('717422669317931110')){
+            if(message.member.hasPermission('BAN_MEMBERS') || message.member.hasPermission('ADMINISTRATOR')){
     
                 if(!message.member.hasPermission("BAN_MEMBERS")) return ;
                 if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply('**Maeendakesh Permission Bsh Tneh L Ban **!.')
@@ -28,7 +28,8 @@ const Discord = require('discord.js');
                 }    
     
             }else {
-                message.channel.send('`\`\`\ \n Maeendakesh Permession Bsh Tneh L Ban ! \n \`\`\`');
+                message.delete();
+            message.channel.send(`${message.author}\`\`\` \n Maeendakesh Permession Bsh Tneh l Ban l Shkun ! \n \`\`\``).then(message => message.delete({timeout: 4000}));
             }
         } 
     }
