@@ -1,0 +1,41 @@
+{
+  "name": "gabsis-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GABSIS",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "axios": "^0.21.1",
+    "bot": "0.0.3",
+    "date.format": "^1.1.2",
+    "dir": "^0.1.2",
+    "dirs": "^0.2.0",
+    "discord.js": "^12.5.3",
+    "execute": "^0.1.0",
+    "ffmpeg": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "formatdate": "^0.3.3",
+    "fs": "0.0.1-security",
+    "images-scraper": "^6.3.0",
+    "moment": "^2.29.1",
+    "ms": "^2.1.3",
+    "music": "0.0.4",
+    "named": "^1.0.2",
+    "queue": "^6.0.2",
+    "quotes": "^0.2.0",
+    "rich-embed": "^1.1.3",
+    "semi": "^4.0.5",
+    "size": "^1.0.0",
+    "target": "0.0.2",
+    "user": "0.0.0",
+    "yarn": "^1.22.11",
+    "yoda": "^1.1.2",
+    "yt-search": "^2.9.0",
+    "ytdl-core": "^4.8.2"
+  }
+}
