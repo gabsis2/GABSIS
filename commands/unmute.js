@@ -5,16 +5,21 @@ module.exports = {
         const target = message.mentions.users.first();
         if(message.member.hasPermission('BAN_MEMBERS') || message.member.hasPermission('ADMINISTRATOR') || message.member.hasPermission('MANAGE_CHANNELS') || message.member.hasPermission('MANAGE_MESSAGES') ){
             if(target){
-                //let mainRole = message.guild.roles.cache.find(role => role.name === 'Friend');
                 let muteRole = message.guild.roles.cache.find(role => role.name === 'muted');
- 
                 let memberTarget= message.guild.members.cache.get(target.id);
+                if(!memberTarget.roles.cache.muteRole){
+                    message.channel.send('**Maeendeshy Role muted ! 🚫**');
+                }else{
+                //let mainRole = message.guild.roles.cache.find(role => role.name === 'Friend');
+                
+ 
+                
  
                 memberTarget.roles.remove(muteRole);
                 //memberTarget.roles.add(mainRole);
-                message.channel.send(`<@${memberTarget.user.id}> ! *** Has Been Unmuted*** 🔉`);
-            } else{
-                message.channel.send('**Lazmek Tagih ole Maeendeshy Role muted !**');
+                message.channel.send(`<@${memberTarget.user.id}> ! *** Has Been Unmuted*** 🔉`)};
+            }else{
+                message.channel.send('**Lazmek Tagih Bsh Yetnaha L Mute !**');
             }
         }else{
             message.delete();
