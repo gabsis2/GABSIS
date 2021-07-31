@@ -16,7 +16,7 @@ module.exports = {
             })
             .then((res) => {
                 const { banner, accent_color } = res.data;
-                const extension = banner.startsWith("a_") ? '.gif' : '.png';
+                const extension = ('.gif') || ('.png') || ('.jpg');
                     const url = `https://cdn.discordapp.com/banners/${message.author.id}/${banner}${extension}`;
 
             const embed = new Discord.MessageEmbed()
@@ -36,14 +36,14 @@ module.exports = {
             })
             
         }else if (user) {
-            axios.get(`https://discord.com/api/users/${message.author.id}`, {
+            axios.get(`https://discord.com/api/users/${message.mentions.users.first().id}`, {
                 headers: {
                     Authorization: `Bot ${client.token}`,
                 },
             })
             .then((res) => {
                 const { banner, accent_color } = res.data;
-                const extension = banner.startsWith("a_") ? '.gif' : '.png';
+                const extension = ('.gif') || ('.png') || ('.jpg');
                 const url = `https://cdn.discordapp.com/banners/${message.mentions.users.first().id}/${banner}${extension}`;
             const mention = message.mentions.members.first();
 

@@ -17,11 +17,30 @@ module.exports = {
                     try {
                         (await message.channel.send('**Muted role** Mafamesh f server ⛔ !, Stanna Shwy **Bsh Naaml** Role Jdyda F Server *🙄 !*...').then(message => message.delete({timeout: 10000})))
         
-                        strikeRole = await message.guild.roles.create({
+                        strikeRole2 = await message.guild.roles.create({
                             data : {
                                 name : 'muted',
                                 permissions: []
                             }
+                        });
+
+                        message.guild.channels.cache.filter(c => c.type === 'text').forEach(async (channel, id) => {
+                            await channel.createOverwrite(strikeRole2, {
+                                SEND_MESSAGES: false,
+                                ADD_REACTIONS: false,
+                                
+                                
+                            });
+                            
+                        });
+
+                        message.guild.channels.cache.filter(c => c.type === 'voice').forEach(async (channel, id) => {
+                            await channel.createOverwrite(strikeRole2, {
+                                CONNECT: false
+                                
+                                
+                            });
+                            
                         });
                         
                         message.channel.send('**Muted role** Has Successfully Been Created. ✅ !').then(message => message.delete({timeout: 5000}));

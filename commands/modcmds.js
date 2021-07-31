@@ -4,11 +4,14 @@ module.exports = {
     name: 'modcmds',
     description: 'Moderators Commands  Command !',
     execute(message, args){
+        if (message.member.hasPermission('ADMINISTRATOR') || message.member.hasPermission('MANAGE_MESSAGES') || message.member.hasPermission('MANAGE_CHANNELS')
+        || message.member.hasPermission('MANAGE_GUILD') || message.member.hasPermission('BAN_MEMBERS') || message.member.hasPermission('KICK_MEMBERS')){
         const embed = new Discord.MessageEmbed()
         .setTitle(`List Of Moderator Commands !`)
         .setDescription('**How Can I Help You Guy ?**')
         .setAuthor('*Welcome ♥*','https://imgur.com/D06I1DN.gif','')
         .setThumbnail('https://imgur.com/D06I1DN.gif')
+        .setURL('https://discord.com/')
         .addFields(
             {name: 'Ban', value: `\`G6-ban\``, inline: true},
             {name: `UnBan`, value: `\`G6-unban\``, inline: true},
@@ -27,9 +30,9 @@ module.exports = {
             
 
         )
-        .setFooter("© ! G A B S I S#1978", "https://imgur.com/D06I1DN.gif")
-        .setTimestamp()
+        .setFooter("© \n [Any Problem Contact Bot's Owner (G6-owner)]", "https://imgur.com/D06I1DN.gif")
 
         message.channel.send(embed)
+        }
     }
 }

@@ -29,6 +29,16 @@ module.exports = {
                                 
                             })
                         });
+
+                        message.guild.channels.cache.filter(c => c.type === 'voice').forEach(async (channel, id) => {
+                            await channel.createOverwrite(strikeRole2, {
+                                CONNECT: false
+                                
+                                
+                            });
+                            
+                        });
+
                         message.channel.send('**Muted role** has successfully been created. ✅ !').then(message => message.delete({timeout: 5000}));
                         
                     } catch (error) {
@@ -57,7 +67,7 @@ module.exports = {
                 message.channel.send('I Can/t find that member!');
             }
         }else{
-            message.channel.send(`\`\`\` \n Maeendakesh Permession Bsh Temuti Shkun ! \n \`\`\``).then(message.delete({timeout: 5000}));
+            message.channel.send(`\`\`\` \n Maeendakesh Permession Bsh Temuti Shkun ! \n \`\`\``).then(message => message.delete({timeout: 5000}));
         }
     }
 }

@@ -3,10 +3,10 @@ module.exports = {
     description: "This unmutes a member",
     execute(message, args){
         const target = message.mentions.users.first();
-        if(message.member.roles.cache.has('698146011486617622') || message.member.roles.cache.has('717422669317931110')){
+        if(message.member.hasPermission('BAN_MEMBERS') || message.member.hasPermission('ADMINISTRATOR') || message.member.hasPermission('MANAGE_CHANNELS') || message.member.hasPermission('MANAGE_MESSAGES') ){
             if(target){
                 //let mainRole = message.guild.roles.cache.find(role => role.name === 'Friend');
-                let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+                let muteRole = message.guild.roles.cache.find(role => role.name === 'muted');
  
                 let memberTarget= message.guild.members.cache.get(target.id);
  
@@ -14,7 +14,7 @@ module.exports = {
                 //memberTarget.roles.add(mainRole);
                 message.channel.send(`<@${memberTarget.user.id}> ! *** Has Been Unmuted*** 🔉`);
             } else{
-                message.channel.send('**ID Mahuush Mawjuud F Server ole Maeendeshy Role Mute !**');
+                message.channel.send('**Lazmek Tagih ole Maeendeshy Role muted !**');
             }
         }else{
             message.delete();

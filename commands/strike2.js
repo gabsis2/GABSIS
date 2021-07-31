@@ -17,7 +17,7 @@ module.exports = {
                     try {
                         (await message.channel.send('**Strike2 role** Mafamesh f server ⛔ !, Stanna Shwy **Bsh Naaml** Role Jdyda F Server *🙄 !*.').then(message => message.delete({timeout: 10000})))
         
-                        strikeRole = await message.guild.roles.create({
+                        strikeRole2 = await message.guild.roles.create({
                             data : {
                                 name : 'Strike2',
                                 permissions: []
@@ -31,14 +31,15 @@ module.exports = {
                     }
                 }
 
-
+ 
 
  
                 if (!args[1]) {
                     
                     memberTarget.roles.remove(strikeRole);
-                    memberTarget.roles.add(strikeRole2);
+                    
                     message.channel.send(`<@${memberTarget.user.id}> **Has Been Warned** ⚠️ \`{2}\` !`);
+                    memberTarget.roles.add(strikeRole2);
                     return
                 }
                 
