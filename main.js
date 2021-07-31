@@ -29,8 +29,7 @@ client.on('ready', () => {
         () => `in ${client.guilds.cache.size} serveurs`,
         () => `G6-help `,
         () => `BY ! G A B S I S#1978`,
-        () => `Insta : gabsis._`,
-        () => `youtube.com/GABSIS06`
+    
     ]
     let i = 0
     setInterval(() => {
@@ -50,26 +49,26 @@ client.once('ready', () => {
 
 
 
-client.on('guildMemberAdd', guildMember =>{
-    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Friend');
+// client.on('guildMemberAdd', guildMember =>{
+//     // let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Friend');
     
-    const embed = new Discord.MessageEmbed()
-        .setColor('RANDOM')
-        .setAuthor('*Welcome Message*','https://imgur.com/D06I1DN.gif')
-        .setDescription(`Welcome To Our Server Ye Zabour ♥ \n <@${guildMember.user.id}> \n Just Aamel Tala Ale Category **[ Reaction-Roles ]** \n O Khoudh Role Elli Theb Aleha ♥☺`)
-        .setImage('https://media1.tenor.com/images/857a9fed91255db5d4960ebe32501bbc/tenor.gif')
-        .setThumbnail(guildMember.user.displayAvatarURL({ dynamic : true}))
+//     const embed = new Discord.MessageEmbed()
+//         .setColor('RANDOM')
+//         .setAuthor('*Welcome Message*','https://imgur.com/D06I1DN.gif')
+//         .setDescription(`**Welcome To Our Server Guy** ♥ \n \n <@${guildMember.user.id}> \n \n \`Have Fun\`♥ \n ♥☺`)
+//         .setImage('https://media1.tenor.com/images/857a9fed91255db5d4960ebe32501bbc/tenor.gif')
+//         .setThumbnail(guildMember.user.displayAvatarURL({ dynamic : true}))
     
     
-    guildMember.guild.channels.cache.get('701998978522415164').send(`<@${guildMember.user.id}>`).then(msg => msg.delete({timeout: 5000}));
-    guildMember.guild.channels.cache.get('701998978522415164').send(embed);
+//     guildMember.guild.channels.cache.get('701998978522415164').send(`<@${guildMember.user.id}>, ♥`).then(msg => msg.delete({timeout: 5000}));
+//     guildMember.guild.channels.cache.get('701998978522415164').send(embed);
     
 
-    //message.Embed = await message.channel.send(embed);
-    guildMember.roles.add(welcomeRole);
+//     //message.Embed = await message.channel.send(embed);
+//     // guildMember.roles.add(welcomeRole);
     
-    // guildMember.guild.channels.cache.get('701998978522415164').send(` ***Welcome*** <@${guildMember.user.id}> Ye **Zabour** \n **Aaml Tala Ale** <#758304227738517555> **o** <#758419203853516840> **o** <#855826904584945684> **O  Reacti **. \n > \`\`\` 'Ahlaaaaa  -  Neeeeees' ❤️  \`\`\` \n https://tenor.com/view/jason-mantzoukas-the-house-greetings-welcome-gif-8225006`);
-});
+//     // guildMember.guild.channels.cache.get('701998978522415164').send(` ***Welcome*** <@${guildMember.user.id}> Ye **Zabour** \n **Aaml Tala Ale** <#758304227738517555> **o** <#758419203853516840> **o** <#855826904584945684> **O  Reacti **. \n > \`\`\` 'Ahlaaaaa  -  Neeeeees' ❤️  \`\`\` \n https://tenor.com/view/jason-mantzoukas-the-house-greetings-welcome-gif-8225006`);
+// });
 
 
 client.on('message', kmsg => {
@@ -90,6 +89,7 @@ client.on('message', message => {
             .setTitle('Bot Developer Discord Link')
             .setURL('https://discord.gg/ZWPmgmnNz6')
             .setAuthor('! G A B S I S#1978','https://imgur.com/D06I1DN.gif')
+            .addField(`*+`,`GABSIS(<@595755770054705152>)`)
             .setDescription('**Contact Owner/s Bot To Help You**')
             .setThumbnail('https://imgur.com/D06I1DN.gif')
             .setTimestamp()
@@ -117,59 +117,65 @@ client.on('message', async message => {
         })
     });
     const code = message.content.split('https://')  || message.content.includes('discord.gg/')[1];
-    if (message.content.includes('https://') || message.content.includes('discord.gg/')) {
-        const IsOurInvite = await isInvite(message.guild, code);
-        if (!IsOurInvite) {
-            message.delete();
-            const embedInvitationWarning = new Discord.MessageEmbed()
-                .setColor('RANDOM')
-                .setAuthor('Oh No !','https://imgur.com/D06I1DN.gif')
-                .setDescription('***You Has Been Warned For Posting a Link***, \n *Maadesh Thabet Link Ken Ma Tchawer* **Admin** .')
-                .setThumbnail('https://imgur.com/D06I1DN.gif')
-                .setTimestamp()
-                .setFooter("© GABSIS", "https://imgur.com/D06I1DN.gif")
-            message.channel.send(embedInvitationWarning).then(msg => msg.delete({timeout: 20000}))
-        };
-    };
     
-});
-
-
-
-
-
-
-client.on('message', message => {
-    if (message.content === 'salem') {  
-      message.channel.send(`**🙋‍♂️Saleeeeeeem ${message.author}**, *Jawek behyy?*`);
-    }else if (message.content === 'slm') {
-        message.channel.send(`**🙋‍♂️Saleeeeeeem ${message.author}**, *Jawek behyy?*`)
-    }else if (message.content === 'ahla') {
-        message.channel.send(`**🙋‍♂️ahla bik ${message.author}**, *Jawek behyy?*`)
-    }else if (message.content === 'wa') {
-        message.channel.send(`**🙋‍♂️ouaaaaaaaa ${message.author}**, *Jawek behyy?*`)
-    }else if (message.content === 'ouaa') {
-        message.channel.send(`**🙋‍♂️Ouaaaaaa ${message.author}**, *Jawek behyy?*`)
-    }else if (message.content === 'gn') {
-        message.channel.send(`**🙋‍♂️gn ${message.author}**`)
-    }else if (message.content === 'bnj') {
-        message.channel.send(`**🙋‍♂️bnj ${message.author}**, *Jawek behyy?*`)
-    }else if (message.content === 'gm') {
-        message.channel.send(`**🙋‍♂️Good Morning ${message.author}**, *Jawek behyy?*`)
-    }else if (message.content === 'k zebi') {
-        message.channel.send(`**zab ${message.author} :( **, *abaath l 3alem ynayek ye vrooo*`)
-    }else if (message.content === 'hmd') {
-        message.channel.send(`**Nshlh Dyme Labeeeees ${message.author}** :heart: `)
-    }else if (message.content === 'hmdl') {
-        message.channel.send(`**Nshlh Dyme Labeeeees ${message.author}** :heart:`)
-    }else if (message.content === 'hmdlh') {
-        message.channel.send(`**Nshlh Dyme Labeeeees ${message.author}** :heart:`)
-    }else if (message.content === 'cv') {
-        message.channel.send(`**Nshlh Dyme Labeeeees ${message.author}** :heart:`)
-    }else if (message.content === 'cvp') {
-        message.channel.send(`:( **Labes Labes, __Baz Tw Teslek__ ${message.author}** :/`)
+    if (message.content.includes('https://') || message.content.includes('discord.gg/')) {
+        if(message.member && !message.member.hasPermission("ADMINISTRATOR")) {
+            if (message.member && !message.member.hasPermission("EMBED_LINKS")){ 
+                const IsOurInvite = await isInvite(message.guild, code);
+                if (!IsOurInvite) {
+                    message.delete();
+                    const embedInvitationWarning = new Discord.MessageEmbed()
+                        .setColor('RANDOM')
+                        .setAuthor('Oh No !','https://imgur.com/D06I1DN.gif')
+                        .setDescription('***You Has Been Warned For Posting a Link***, \n *Maadesh Thabet Link Ken Ma Tchawer* **Admin** .')
+                        .setThumbnail('https://imgur.com/D06I1DN.gif')
+                        .setTimestamp()
+                        .setFooter("© GABSIS", "https://imgur.com/D06I1DN.gif");
+                    message.channel.send(`***Nooooo, ***${message.author}. You Need To Have \`EMBED_LINKS\` *Permission* To Post a Link :warning:`).then(message => message.delete({timeout: 20000}));
+                    message.channel.send(embedInvitationWarning).then(message => message.delete({timeout: 20000}));
+                };
+            };
+        }
     }
 });
+
+
+
+
+
+
+// client.on('message', message => {
+//     if (message.member.hasPermission('757543220979695687')){
+//     if (message.content === 'salem') {  
+//       message.channel.send(`**🙋‍♂️Saleeeeeeem ${message.author}**, *Jawek behyy?*`);
+//     }else if (message.content === 'slm') {
+//         message.channel.send(`**🙋‍♂️Saleeeeeeem ${message.author}**, *Jawek behyy?*`)
+//     }else if (message.content === 'ahla') {
+//         message.channel.send(`**🙋‍♂️ahla bik ${message.author}**, *Jawek behyy?*`)
+//     }else if (message.content === 'wa') {
+//         message.channel.send(`**🙋‍♂️ouaaaaaaaa ${message.author}**, *Jawek behyy?*`)
+//     }else if (message.content === 'ouaa') {
+//         message.channel.send(`**🙋‍♂️Ouaaaaaa ${message.author}**, *Jawek behyy?*`)
+//     }else if (message.content === 'gn') {
+//         message.channel.send(`**🙋‍♂️gn ${message.author}**`)
+//     }else if (message.content === 'bnj') {
+//         message.channel.send(`**🙋‍♂️bnj ${message.author}**, *Jawek behyy?*`)
+//     }else if (message.content === 'gm') {
+//         message.channel.send(`**🙋‍♂️Good Morning ${message.author}**, *Jawek behyy?*`)
+//     }else if (message.content === 'k zebi') {
+//         message.channel.send(`**zab ${message.author} :( **, *abaath l 3alem ynayek ye vrooo*`)
+//     }else if (message.content === 'hmd') {
+//         message.channel.send(`**Nshlh Dyme Labeeeees ${message.author}** :heart: `)
+//     }else if (message.content === 'hmdl') {
+//         message.channel.send(`**Nshlh Dyme Labeeeees ${message.author}** :heart:`)
+//     }else if (message.content === 'hmdlh') {
+//         message.channel.send(`**Nshlh Dyme Labeeeees ${message.author}** :heart:`)
+//     }else if (message.content === 'cv') {
+//         message.channel.send(`**Nshlh Dyme Labeeeees ${message.author}** :heart:`)
+//     }else if (message.content === 'cvp') {
+//         message.channel.send(`:( **Labes Labes, __Baz Tw Teslek__ ${message.author}** :/`)
+//     }
+// }});
 
 
 
@@ -178,13 +184,13 @@ client.on('message', message => {
        let targetMember = message.mentions.members.first();
         if(!targetMember) return message.reply('**Lazmek Tagi Shkun ** ***!***');
            // message goes below!
-        message.channel.send(`<@${targetMember.user.id}> you just got a hug  http://tenor.com/view/anime-cuddle-cute-gif-12668750`);
+        message.channel.send(`<@${targetMember.user.id}> you just got a hug From ${message.author} ! \n http://media.giphy.com/media/l41YdgwPTnuWO6tEI/giphy.gif`);
         process.setMaxListeners(0);
     }else if (message.content.startsWith('G6-bs')) { 
         let targetMember = message.mentions.members.first();
         if(!targetMember) return message.reply('**Lazmek Tagi Shkun ** ***!***');
             // message goes below!
-        message.channel.send(`<@${targetMember.user.id}> you just got a **BiG Slap**  http://media.tenor.com/images/1fb5398880c6ca133d8b96c51277db08/tenor.gif`);
+        message.channel.send(`<@${targetMember.user.id}> you just got a **BiG Slap** From ${message.author} ! \n  http://media.tenor.com/images/1fb5398880c6ca133d8b96c51277db08/tenor.gif`);
         process.setMaxListeners(0);
     }else if (message.content.startsWith('G6-sme')) { 
         let targetMember = message.mentions.members.first();
@@ -196,7 +202,7 @@ client.on('message', message => {
         let targetMember = message.mentions.members.first();
         if(!targetMember) return message.reply('**Lazmek Tagi Shkun ** ***!***');
             // message goes below!
-        message.channel.send(`<@${targetMember.user.id}> you just got a **Small Slap**  http://thumbs.gfycat.com/BiodegradableThreadbareDotterel-small.gif`);
+        message.channel.send(`<@${targetMember.user.id}> you just got a **Small Slap** From ${message.author} ! \n . http://thumbs.gfycat.com/BiodegradableThreadbareDotterel-small.gif`);
         process.setMaxListeners(0);
     }
 }); 
@@ -213,16 +219,17 @@ client.on('message', message => {
       message.channel.send(`🏓Hey, ${message.author}. Your Ping Is ** ${Math.round(client.ws.ping)}ms**`);
     }
 });
-client.on('message', message => {
-    if (message.content === 'gabsis') {  
-        message.channel.send(` 🙋‍♂️Hey, ${message.author}. ***Tw Ki Yshuuf Message Mtaak Tw Yjawbak ♥*** <a:GABSIS:853248873254223922> `);
-    }else if (message.content === 'gab6') {  
-        message.channel.send(` 🙋‍♂️Hey, ${message.author}. ***Tw Ki Yshuuf Message Mtaak Tw Yjawbak ♥*** <a:GABSIS:853248873254223922> `);
-    }else if (message.content === 'gab') {  
-        message.channel.send(` 🙋‍♂️Hey, ${message.author}. ***Tw Ki Yshuuf Message Mtaak Tw Yjawbak ♥*** <a:GABSIS:853248873254223922> `);
-    }else if (message.content === `! G A B S I S`) {  
-        message.channel.send(` 🙋‍♂️Hey, ${message.author}. ***Tw Ki Yshuuf Message Mtaak Tw Yjawbak ♥*** <a:GABSIS:853248873254223922> `);
-    }
+// client.on('message', message => {
+    
+//         if (message.content === 'gabsis') {  
+//             message.channel.send(` 🙋‍♂️Hey, ${message.author}. ***Tw Ki Yshuuf Message Mtaak Tw Yjawbak ♥*** <a:GABSIS:853248873254223922> `);
+//         }else if (message.content === 'gab6') {  
+//             message.channel.send(` 🙋‍♂️Hey, ${message.author}. ***Tw Ki Yshuuf Message Mtaak Tw Yjawbak ♥*** <a:GABSIS:853248873254223922> `);
+//         }else if (message.content === 'gab') {  
+//             message.channel.send(` 🙋‍♂️Hey, ${message.author}. ***Tw Ki Yshuuf Message Mtaak Tw Yjawbak ♥*** <a:GABSIS:853248873254223922> `);
+//         }else if (message.content === `! G A B S I S`) {  
+//             message.channel.send(` 🙋‍♂️Hey, ${message.author}. ***Tw Ki Yshuuf Message Mtaak Tw Yjawbak ♥*** <a:GABSIS:853248873254223922> `);
+//         }
 
 
 
@@ -231,7 +238,7 @@ client.on('message', message => {
 
 
 
-});
+// });
 
 
 
@@ -246,22 +253,23 @@ client.on('message', message => {
 //     }
 // });
 
-client.on('message', message => {
-    if (message.content === 'live') {
+// client.on('message', message => {
+//     if (message.content === 'live') {
+//         if (message.member.hasPermission('757543220979695687'))
 
-        message.channel.send(` 🙋‍♂️Hey, ${message.author} . \n GABSIS Mayhelesh live yhabet kn videos, \n o lien chaine louta ⤵️, \n https://www.youtube.com/GABSIS06 . <a:GABSIS:853248873254223922> `);
-    }
-});
-
-
-
+//         message.channel.send(` 🙋‍♂️Hey, ${message.author} . \n GABSIS Mayhelesh live yhabet kn videos, \n o lien chaine louta ⤵️, \n https://www.youtube.com/GABSIS06 . <a:GABSIS:853248873254223922> `);
+//     }
+// });
 
 
-client.on('message', message => {
-    if (message.content === 'shbeha l 7ayet') {  
-        message.channel.send(` **KI ZEB ZEB ZEB ZEB ZEB ZEB ZEB ZEB ZEBY + 9A7BA ** `);
-      }
-    });
+
+
+
+// client.on('message', message => {
+//     if (message.content === 'shbeha l 7ayet') {  
+//         message.channel.send(` **KI ZEB ZEB ZEB ZEB ZEB ZEB ZEB ZEB ZEBY + 9A7BA ** `);
+//       }
+//     });
 
 
 
@@ -308,8 +316,8 @@ client.on('message', message => {
         client.commands.get('logogif').execute(message, args);
     }else if (command === 'logo'){
         client.commands.get('logo').execute(message, args);
-    }else if (command === 'banner'){
-        client.commands.get('banner').execute(message, args);
+    // }else if (command === 'banner'){
+    //     client.commands.get('banner').execute(message, args);
     }else if (command === 'cmds'){
         client.commands.get('cmds').execute(message, args);
     }else if (command === 'sm'){
@@ -352,7 +360,7 @@ client.on('message', message => {
 
 
 
-client.login('ODU1NTQxMjY1MDg4Nzc0MTQ0.YMz-5A.okwBWg4K8y6E-_EiAsRXIlMMQwU');
+client.login('ODU1NTQxMjY1MDg4Nzc0MTQ0.YMz-5A.3ILmxwPWG9hZANgYBzS4qC1CFv8');
 
 
 
