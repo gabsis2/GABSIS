@@ -13,8 +13,6 @@ module.exports = {
                 //let mainRole = message.guild.roles.cache.find(role => role.name === 'Friend');
                 
  
-                
- 
                 memberTarget.roles.remove(muteRole);
                 //memberTarget.roles.add(mainRole);
                 message.channel.send(`<@${memberTarget.user.id}> ! *** Has Been Unmuted*** 🔉`)};
