@@ -71,6 +71,7 @@ client.once('ready', () => {
 // });
 
 
+
 client.on('message', kmsg => {
     const pmention = new RegExp(`^<@!?${client.user.id}>( |)$`);
     if (kmsg.content.match(pmention)) {
@@ -207,6 +208,55 @@ client.on('message', message => {
     }
 }); 
 
+
+
+
+client.on('guildCreate', guild => {
+    
+    const embed = new Discord.MessageEmbed()
+        .setTitle('NEW SERVER !')
+        .addField('Guild INFO', `${guild.name} (${guild.id}) **${guild.memberCount} Members !**`)
+        .addField('Owner INFO', `${guild.owner} (${guild.owner.id})`)
+        .setFooter(`Currently in ${client.guilds.cache.size} guilds !`)
+        .setTimestamp()
+        .setColor('GREEN')
+    client.channels.cache.get('871125010440388629').send(embed)
+})
+
+client.on('guildDelete', guild => {
+    
+    const embed = new Discord.MessageEmbed()
+        .setTitle('Removed From Server !')
+        .addField('Guild INFO', `${guild.name} (${guild.id}) **${guild.memberCount} Members !**`)
+        .addField('Owner INFO', `${guild.owner} (${guild.owner.id})`)
+        .setFooter(`Currently in ${client.guilds.cache.size} guilds !`)
+        .setTimestamp()
+        .setColor('RED')
+    client.channels.cache.get('871125010440388629').send(embed)
+})
+
+client.on('guildCreate', guild => {
+    let channelToSend;
+
+    guild.channels.cache.forEach((channel) => {
+        if (
+            channel.type === 'text' &&
+            !channelToSend && 
+            channel.permissionsFor(guild.me).has('SEND_MESSAGES')
+        )
+        channelToSend = channel;
+    });
+    if (!channelToSend);
+    const embed = new Discord.MessageEmbed()
+        .setTitle(`Thank you for inviting ${client.user.username} BOT !`)
+        .setColor('#7FFF00')
+        .setAuthor(guild.name, guild.iconURL({dynamic: true}))
+        .setDescription(`Use **${prefix}help** To See All The Commands I Have **!** \n \n [Created At : 18/6/2021]`)
+        .setTimestamp()
+        .setFooter('© ! G A B S I S#1978', client.user.displayAvatarURL());
+
+    channelToSend.send(embed)
+})
 
 
 
