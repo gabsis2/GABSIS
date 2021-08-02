@@ -390,7 +390,9 @@ client.on('message', message => {
         client.commands.get('unlock').execute(message, args);
     }else if (command === 'modcmds'){
         client.commands.get('modcmds').execute(message, args);
-    }
+    }//else if (command === 'setup-welcome'){
+    //     client.commands.get('setup-welcome').execute(message, args);
+    // }
 
 
 
@@ -399,6 +401,8 @@ client.on('message', message => {
 
     if(command === 'ping'){
         client.commands.get('ping').execute(message, args);
+    }if (command === 'invite'){
+        client.commands.get('invite').execute(message, args);
     }
 });
 
@@ -410,7 +414,7 @@ client.on('message', message => {
 
 
 
-client.login('ODU1NTQxMjY1MDg4Nzc0MTQ0.YMz-5A.3ILmxwPWG9hZANgYBzS4qC1CFv8');
+client.login('ODU1NTQxMjY1MDg4Nzc0MTQ0.YMz-5A.kCe3fDQSbATGg50dk_BZlKfiXeE');
 
 
 
