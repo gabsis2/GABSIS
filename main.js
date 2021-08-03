@@ -209,6 +209,32 @@ client.on('message', message => {
 }); 
 
 
+client.on('messageDelete', message =>  {
+    if(!message.partial){
+        const channel = client.channels.cache.get('872109410015653939');
+        if (channel){
+            const embed = new Discord.MessageEmbed()
+            .setTitle('Message Deleted')
+            .setDescription(message.content)
+            .addField('Author', `${message.author.tag} (${message.author.id}`)
+            .addField('Channel', `${message.channel.name} (${message.channel.id})`)
+            .setTimestamp()
+            channel.send(embed);
+        }
+    }
+})
+
+
+
+
+client.on('guildMemberRemove', member => {
+	console.log(`${member.user.tag} left the guild... but was it of their own free will?`);
+});
+client.on('guildBanAdd', async (guild, user) => {
+	console.log(`${user.tag} got hit with the swift hammer of justice in the guild ${guild.name}.`);
+});
+
+
 
 
 client.on('guildCreate', guild => {
@@ -414,7 +440,7 @@ client.on('message', message => {
 
 
 
-client.login('ODU1NTQxMjY1MDg4Nzc0MTQ0.YMz-5A.kCe3fDQSbATGg50dk_BZlKfiXeE');
+client.login('ODU1NTQxMjY1MDg4Nzc0MTQ0.YMz-5A.s4ClCJRoKHemhJZeu-iJQI3XoW0');
 
 
 
